@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions
 @given("user be logged in the platform")
 def given(context):
     context.driver = webdriver.Chrome(
-        "C:/Users/Victor/PycharmProjects/test-bdd/features/steps/drivers/chromedriver.exe")
+        "C:/Users/Victor/PycharmProjects/mentoring-activities/frontend-tests/bdd-test-activity/features/logout/features/steps/utils/drivers/chromedriver.exe")
     context.driver.get("https://homologacao.leadfortaleza.com.br/ead/login")
     context.driver.maximize_window()
     username_field = context.driver.find_element_by_id("login")

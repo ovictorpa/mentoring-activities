@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions
 @given("user in the Edit Profile page")
 def given(context):
     context.driver = webdriver.Chrome(
-        "C:/Users/Victor/PycharmProjects/test-bdd/features/steps/drivers/chromedriver.exe")
+        "C:/Users/Victor/PycharmProjects/mentoring-activities/frontend-tests/bdd-test-activity/features/edit-profile/features/steps/1a.py")
     context.driver.get("https://homologacao.leadfortaleza.com.br/ead/login")
     context.driver.maximize_window()
     username_field = context.driver.find_element_by_id("login")
