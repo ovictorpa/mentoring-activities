@@ -20,7 +20,6 @@ class Authenticate(unittest.TestCase):
         body = get_valid_credentials()
         response = requests.post(f'{self.url}/authenticate/login', json=body)
         assert response.status_code == 200
-        print()
         json_data = json.loads(response.text)
 
         self.assertIn('id', json_data)
@@ -38,16 +37,26 @@ class Authenticate(unittest.TestCase):
         self.assertIn('profile', json_data)
         self.assertEqual(type(json_data['profile']), dict)
 
-        profile = json_data['profile']
+        self.assertIn('avatar', json_data)
+        self.assertEqual(type(json_data['avatar']), str)
 
-        self.assertIn('id', profile)
-        self.assertEqual(type(profile['id']), int)
+        self.assertIn('lastAccess', json_data)
+        self.assertEqual(type(json_data['lastAccess']), str)
 
-        self.assertIn('name', profile)
-        self.assertEqual(type(profile['name']), str)
+        self.assertIn('state', json_data)
+        self.assertEqual(type(json_data['state']), dict)
 
-        self.assertIn('type', profile)
-        self.assertEqual(type(profile['type']), str)
+        self.assertIn('country', json_data)
+        self.assertEqual(type(json_data['country']), dict)
+
+        self.assertIn('language', json_data)
+        self.assertEqual(type(json_data['language']), dict)
+
+        self.assertIn('accessibility', json_data)
+        self.assertEqual(type(json_data['accessibility']), str)
+
+        self.assertIn('active', json_data)
+        self.assertEqual(type(json_data['active']), bool)
 
         for permission in json_data['permissions']:
             self.assertIn('tag', permission)
@@ -56,4 +65,13 @@ class Authenticate(unittest.TestCase):
             self.assertIn('name', permission)
             self.assertEqual(type(permission['name']), str)
 
+        self.assertIn('token', json_data)
+        self.assertEqual(type(json_data['token']), str)
 
+        self.assertIn('logged', json_data)
+        self.assertEqual(type(json_data['logged']), bool)
+
+
+
+
+        print()

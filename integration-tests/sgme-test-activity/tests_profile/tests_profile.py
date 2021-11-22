@@ -25,6 +25,8 @@ class Profiles(unittest.TestCase):
 
         json_data = json.loads(response.text)
 
+        print()
+
         for item in json_data:
             self.assertIn('id', item)
             self.assertEqual(type(item['id']), int)
