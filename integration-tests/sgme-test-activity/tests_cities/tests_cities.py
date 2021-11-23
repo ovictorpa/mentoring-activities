@@ -108,6 +108,3 @@ class Cities(unittest.TestCase):
 
         self.assertIn('active', json_data['state']['timezone'])
         self.assertEqual(type(json_data['state']['timezone']['active']), bool)
-
-
-        print()

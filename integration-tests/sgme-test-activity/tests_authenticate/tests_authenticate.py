@@ -37,6 +37,15 @@ class Authenticate(unittest.TestCase):
         self.assertIn('profile', json_data)
         self.assertEqual(type(json_data['profile']), dict)
 
+        self.assertIn('id', json_data['profile'])
+        self.assertEqual(type(json_data['profile']['id']), int)
+
+        self.assertIn('name', json_data['profile'])
+        self.assertEqual(type(json_data['profile']['name']), str)
+
+        self.assertIn('type', json_data['profile'])
+        self.assertEqual(type(json_data['profile']['type']), str)
+
         self.assertIn('avatar', json_data)
         self.assertEqual(type(json_data['avatar']), str)
 
@@ -46,11 +55,44 @@ class Authenticate(unittest.TestCase):
         self.assertIn('state', json_data)
         self.assertEqual(type(json_data['state']), dict)
 
+        self.assertIn('id', json_data['state'])
+        self.assertEqual(type(json_data['state']['id']), int)
+
+        self.assertIn('name', json_data['state'])
+        self.assertEqual(type(json_data['state']['name']), str)
+
+        self.assertIn('active', json_data['state'])
+        self.assertEqual(type(json_data['state']['active']), bool)
+
+        self.assertIn('country', json_data['state'])
+        self.assertEqual(type(json_data['state']['country']), dict)
+
+        self.assertIn('id', json_data['state']['country'])
+        self.assertEqual(type(json_data['state']['country']['id']), int)
+
+        self.assertIn('name', json_data['state']['country'])
+        self.assertEqual(type(json_data['state']['country']['name']), str)
+
+        self.assertIn('ddi', json_data['state']['country'])
+        self.assertEqual(type(json_data['state']['country']['ddi']), int)
+
+        self.assertIn('timezone', json_data['state']['country'])
+        self.assertEqual(type(json_data['state']['country']['timezone']), dict)
+
         self.assertIn('country', json_data)
         self.assertEqual(type(json_data['country']), dict)
 
         self.assertIn('language', json_data)
         self.assertEqual(type(json_data['language']), dict)
+
+        self.assertIn('id', json_data['language'])
+        self.assertEqual(type(json_data['language']['id']), int)
+
+        self.assertIn('name', json_data['language'])
+        self.assertEqual(type(json_data['language']['name']), str)
+
+        self.assertIn('code', json_data['language'])
+        self.assertEqual(type(json_data['language']['code']), str)
 
         self.assertIn('accessibility', json_data)
         self.assertEqual(type(json_data['accessibility']), str)
@@ -70,8 +112,3 @@ class Authenticate(unittest.TestCase):
 
         self.assertIn('logged', json_data)
         self.assertEqual(type(json_data['logged']), bool)
-
-
-
-
-        print()
