@@ -5,10 +5,10 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
 
-@given("a user is in the Editions page")
+@given("a user is in the Companies page")
 def given(context):
     context.driver = webdriver.Chrome(
-        "C:/Users/Victor/PycharmProjects/mentoring-activities/final-activity/question-02/login/features/steps/drivers/chromedriver.exe")
+        "C:/Users/Victor/PycharmProjects/mentoring-activities/final-activity/question-02/tests_companies/features/steps/drivers/chromedriver.exe")
     context.driver.get("https://test.jasgme.com/pt/login")
     context.driver.maximize_window()
 
@@ -25,27 +25,15 @@ def given(context):
         (By.XPATH,
          '/html/body/app-root/app-sidebar-layout/div/div/app-accessibility-bar/div/nav/div/ul/ul/li[2]/button')))
 
-    editions_button = context.driver.find_element_by_xpath(
-        '/html/body/app-root/app-sidebar-layout/div/nav/div/div[2]/ul[1]/li[2]/a')
-    editions_button.click()
 
-
-@when("the user inserts the existent edition name and clicks in Search")
+@when("the user clicks in Monitor button")
 def when(context):
-
-    WebDriverWait(context.driver, 60).until(expected_conditions.visibility_of_element_located(
-        (By.XPATH,
-         '/html/body/app-root/app-sidebar-layout/div/div/app-administrator/div/app-editions/div/div/app-custom-card/div/div[2]/div/div/div[2]/div[1]/div[2]/button[1]')))
-
-    input_edition_name = context.driver.find_element_by_id("name")
-    input_edition_name.send_keys("test")
-
-    search_button = context.driver.find_element_by_xpath(
-        '/html/body/app-root/app-sidebar-layout/div/div/app-administrator/div/app-editions/div/div/app-custom-card/div/div[2]/div/div/div[2]/div[1]/div[2]/button[1]')
-    search_button.click()
+    monitor_button = context.driver.find_element_by_xpath(
+        '/html/body/app-root/app-sidebar-layout/div/div/app-administrator/div/app-list-companies/div/div/app-custom-card/div/div[2]/div/div/div[2]/div[2]/div/table/tbody/tr[17]/td[1]/a')
+    monitor_button.click()
 
 
-@then("the system shows the edition")
+@then("system shows the entire journey of the company")
 def then(context):
     WebDriverWait(context.driver, 60).until(expected_conditions.visibility_of_element_located(
         (By.XPATH,

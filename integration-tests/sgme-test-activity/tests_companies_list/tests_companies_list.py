@@ -20,7 +20,7 @@ class CompaniesList(unittest.TestCase):
         auth = get_token()
         header = {'Authorization': auth}
         params = {"start": 0, "max": 10}
-        body = {"name":"teste"}
+        body = {"name": "teste"}
         response = requests.post(f'{self.url}/companies-list', headers=header, json=body, params=params)
         assert response.status_code == 200
 

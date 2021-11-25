@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions
 @given("a user is in the SGME platform login page")
 def given(context):
     context.driver = webdriver.Chrome(
-        "C:/Users/Victor/PycharmProjects/mentoring-activities/final-activity/question-02/login/features/steps/drivers/chromedriver.exe")
+        "C:/Users/Victor/PycharmProjects/mentoring-activities/final-activity/question-02/tests_loginlogin/features/steps/drivers/chromedriver.exe")
     context.driver.get("https://test.jasgme.com/pt/login")
     context.driver.maximize_window()
 
