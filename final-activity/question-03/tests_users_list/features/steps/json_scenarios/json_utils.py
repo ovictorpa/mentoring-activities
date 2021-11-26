@@ -21,6 +21,5 @@ def get_token():
 
     json_data = json.loads(response.text)
     token = json_data['token']
-
     auth = f'Bearer {token}'
     return auth

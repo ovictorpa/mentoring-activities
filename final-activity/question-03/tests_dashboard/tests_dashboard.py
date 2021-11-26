@@ -40,47 +40,53 @@ class Dashboard(unittest.TestCase):
         self.assertIn('goals', json_data)
         self.assertEqual(type(json_data['goals']), dict)
 
-        self.assertIn('breakevenPoint', json_data['goals'])
-        self.assertEqual(type(json_data['goals']['breakevenPoint']), float)
+        goals = json_data['goals']
 
-        self.assertIn('salesGoal', json_data['goals'])
-        self.assertEqual(type(json_data['goals']['salesGoal']), float)
+        self.assertIn('breakevenPoint', goals)
+        self.assertEqual(type(goals['breakevenPoint']), float)
 
-        self.assertIn('totalTaxForSale', json_data['goals'])
-        self.assertEqual(type(json_data['goals']['totalTaxForSale']), float)
+        self.assertIn('salesGoal', goals)
+        self.assertEqual(type(goals['salesGoal']), float)
 
-        self.assertIn('unitBP', json_data['goals'])
-        self.assertEqual(type(json_data['goals']['unitBP']), float)
+        self.assertIn('totalTaxForSale', goals)
+        self.assertEqual(type(goals['totalTaxForSale']), float)
 
-        self.assertIn('unitSG', json_data['goals'])
-        self.assertEqual(type(json_data['goals']['unitSG']), float)
+        self.assertIn('unitBP', goals)
+        self.assertEqual(type(goals['unitBP']), float)
+
+        self.assertIn('unitSG', goals)
+        self.assertEqual(type(goals['unitSG']), float)
 
         self.assertIn('progress', json_data)
         self.assertEqual(type(json_data['progress']), dict)
 
-        self.assertIn('progressPlaning', json_data['progress'])
-        self.assertEqual(type(json_data['progress']['progressPlaning']), float)
+        progress = json_data['progress']
 
-        self.assertIn('progressRH', json_data['progress'])
-        self.assertEqual(type(json_data['progress']['progressRH']), float)
+        self.assertIn('progressPlaning', progress)
+        self.assertEqual(type(progress['progressPlaning']), float)
 
-        self.assertIn('progressProduction', json_data['progress'])
-        self.assertEqual(type(json_data['progress']['progressProduction']), int)
+        self.assertIn('progressRH', progress)
+        self.assertEqual(type(progress['progressRH']), float)
 
-        self.assertIn('progressMarketing', json_data['progress'])
-        self.assertEqual(type(json_data['progress']['progressMarketing']), int)
+        self.assertIn('progressProduction', progress)
+        self.assertEqual(type(progress['progressProduction']), int)
 
-        self.assertIn('progressFinancial', json_data['progress'])
-        self.assertEqual(type(json_data['progress']['progressFinancial']), float)
+        self.assertIn('progressMarketing', progress)
+        self.assertEqual(type(progress['progressMarketing']), int)
+
+        self.assertIn('progressFinancial', progress)
+        self.assertEqual(type(progress['progressFinancial']), float)
 
         self.assertIn('saleDevolutionInfo', json_data)
         self.assertEqual(type(json_data['saleDevolutionInfo']), dict)
 
-        self.assertIn('retired', json_data['saleDevolutionInfo'])
-        self.assertEqual(type(json_data['saleDevolutionInfo']['retired']), int)
+        saleDevolutionInfo = json_data['saleDevolutionInfo']
 
-        self.assertIn('stock', json_data['saleDevolutionInfo'])
-        self.assertEqual(type(json_data['saleDevolutionInfo']['stock']), int)
+        self.assertIn('retired', saleDevolutionInfo)
+        self.assertEqual(type(saleDevolutionInfo['retired']), int)
+
+        self.assertIn('stock', saleDevolutionInfo)
+        self.assertEqual(type(saleDevolutionInfo['stock']), int)
 
         self.assertIn('totalProductsSelled', json_data)
         self.assertEqual(type(json_data['totalProductsSelled']), float)
@@ -91,88 +97,94 @@ class Dashboard(unittest.TestCase):
         self.assertIn('formulas', json_data)
         self.assertEqual(type(json_data['formulas']), dict)
 
-        self.assertIn('actionsProfitability', json_data['formulas'])
-        self.assertEqual(type(json_data['formulas']['actionsProfitability']), float)
+        formulas = json_data['formulas']
 
-        self.assertIn('totalShareCapital', json_data['formulas'])
-        self.assertEqual(type(json_data['formulas']['totalShareCapital']), float)
+        self.assertIn('actionsProfitability', formulas)
+        self.assertEqual(type(formulas['actionsProfitability']), float)
 
-        self.assertIn('productionGoal', json_data['formulas'])
-        self.assertEqual(type(json_data['formulas']['productionGoal']), float)
+        self.assertIn('totalShareCapital', formulas)
+        self.assertEqual(type(formulas['totalShareCapital']), float)
 
-        self.assertIn('saleGoal', json_data['formulas'])
-        self.assertEqual(type(json_data['formulas']['saleGoal']), float)
+        self.assertIn('productionGoal', formulas)
+        self.assertEqual(type(formulas['productionGoal']), float)
+
+        self.assertIn('saleGoal', formulas)
+        self.assertEqual(type(formulas['saleGoal']), float)
 
         self.assertIn('dre1', json_data)
         self.assertEqual(type(json_data['dre1']), dict)
 
-        self.assertIn('provider', json_data['dre1'])
-        self.assertEqual(type(json_data['dre1']['provider']), float)
+        dre1 = json_data['dre1']
 
-        self.assertIn('income', json_data['dre1'])
-        self.assertEqual(type(json_data['dre1']['income']), float)
+        self.assertIn('provider', dre1)
+        self.assertEqual(type(dre1['provider']), float)
 
-        self.assertIn('sales', json_data['dre1'])
-        self.assertEqual(type(json_data['dre1']['sales']), float)
+        self.assertIn('income', dre1)
+        self.assertEqual(type(dre1['income']), float)
 
-        self.assertIn('rent', json_data['dre1'])
-        self.assertEqual(type(json_data['dre1']['rent']), float)
+        self.assertIn('sales', dre1)
+        self.assertEqual(type(dre1['sales']), float)
 
-        self.assertIn('taxForSales', json_data['dre1'])
-        self.assertEqual(type(json_data['dre1']['taxForSales']), float)
+        self.assertIn('rent', dre1)
+        self.assertEqual(type(dre1['rent']), float)
 
-        self.assertIn('socialCompanyCharges', json_data['dre1'])
-        self.assertEqual(type(json_data['dre1']['socialCompanyCharges']), float)
+        self.assertIn('taxForSales', dre1)
+        self.assertEqual(type(dre1['taxForSales']), float)
 
-        self.assertIn('socialEmployeeCharges', json_data['dre1'])
-        self.assertEqual(type(json_data['dre1']['socialEmployeeCharges']), float)
+        self.assertIn('socialCompanyCharges', dre1)
+        self.assertEqual(type(dre1['socialCompanyCharges']), float)
 
-        self.assertIn('comissions', json_data['dre1'])
-        self.assertEqual(type(json_data['dre1']['comissions']), float)
+        self.assertIn('socialEmployeeCharges', dre1)
+        self.assertEqual(type(dre1['socialEmployeeCharges']), float)
 
-        self.assertIn('netProfit', json_data['dre1'])
-        self.assertEqual(type(json_data['dre1']['netProfit']), float)
+        self.assertIn('comissions', dre1)
+        self.assertEqual(type(dre1['comissions']), float)
 
-        self.assertIn('taxes', json_data['dre1'])
-        self.assertEqual(type(json_data['dre1']['taxes']), float)
+        self.assertIn('netProfit', dre1)
+        self.assertEqual(type(dre1['netProfit']), float)
 
-        self.assertIn('finalProfit', json_data['dre1'])
-        self.assertEqual(type(json_data['dre1']['finalProfit']), float)
+        self.assertIn('taxes', dre1)
+        self.assertEqual(type(dre1['taxes']), float)
+
+        self.assertIn('finalProfit', dre1)
+        self.assertEqual(type(dre1['finalProfit']), float)
 
         self.assertIn('dre2', json_data)
         self.assertEqual(type(json_data['dre2']), dict)
 
-        self.assertIn('provider', json_data['dre2'])
-        self.assertEqual(type(json_data['dre2']['provider']), float)
+        dre2 = json_data['dre2']
 
-        self.assertIn('income', json_data['dre2'])
-        self.assertEqual(type(json_data['dre2']['income']), float)
+        self.assertIn('provider', dre2)
+        self.assertEqual(type(dre2['provider']), float)
 
-        self.assertIn('sales', json_data['dre2'])
-        self.assertEqual(type(json_data['dre2']['sales']), float)
+        self.assertIn('income', dre2)
+        self.assertEqual(type(dre2['income']), float)
 
-        self.assertIn('rent', json_data['dre2'])
-        self.assertEqual(type(json_data['dre2']['rent']), float)
+        self.assertIn('sales', dre2)
+        self.assertEqual(type(dre2['sales']), float)
 
-        self.assertIn('taxForSales', json_data['dre2'])
-        self.assertEqual(type(json_data['dre2']['taxForSales']), float)
+        self.assertIn('rent', dre2)
+        self.assertEqual(type(dre2['rent']), float)
 
-        self.assertIn('socialCompanyCharges', json_data['dre2'])
-        self.assertEqual(type(json_data['dre2']['socialCompanyCharges']), float)
+        self.assertIn('taxForSales', dre2)
+        self.assertEqual(type(dre2['taxForSales']), float)
 
-        self.assertIn('socialEmployeeCharges', json_data['dre2'])
-        self.assertEqual(type(json_data['dre2']['socialEmployeeCharges']), float)
+        self.assertIn('socialCompanyCharges', dre2)
+        self.assertEqual(type(dre2['socialCompanyCharges']), float)
 
-        self.assertIn('comissions', json_data['dre2'])
-        self.assertEqual(type(json_data['dre2']['comissions']), float)
+        self.assertIn('socialEmployeeCharges', dre2)
+        self.assertEqual(type(dre2['socialEmployeeCharges']), float)
 
-        self.assertIn('netProfit', json_data['dre2'])
-        self.assertEqual(type(json_data['dre2']['netProfit']), float)
+        self.assertIn('comissions', dre2)
+        self.assertEqual(type(dre2['comissions']), float)
 
-        self.assertIn('taxes', json_data['dre2'])
-        self.assertEqual(type(json_data['dre2']['taxes']), float)
+        self.assertIn('netProfit', dre2)
+        self.assertEqual(type(dre2['netProfit']), float)
 
-        self.assertIn('finalProfit', json_data['dre2'])
-        self.assertEqual(type(json_data['dre2']['finalProfit']), float)
+        self.assertIn('taxes', dre2)
+        self.assertEqual(type(dre2['taxes']), float)
+
+        self.assertIn('finalProfit', dre2)
+        self.assertEqual(type(dre2['finalProfit']), float)
 
         print()
