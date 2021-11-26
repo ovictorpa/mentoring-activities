@@ -30,7 +30,6 @@ class UsersList(unittest.TestCase):
             "responsible": "",
             "active": "true"
         }
-
         response = requests.post(f'{self.url}/users-list', headers=header, json=body, params=params)
         assert response.status_code == 200
 
