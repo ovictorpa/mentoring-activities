@@ -23,9 +23,9 @@ class UsersList(unittest.TestCase):
             "name": "Victor",
             "email": "victor.alves@dellead.com",
             "lastAccess": "",
-            "profile": "",
-            "country": "",
-            "state": "",
+            "profile": "Administrator",
+            "country": "Brasil",
+            "state": "Ceará",
             "institution": "",
             "responsible": "",
             "active": "true"

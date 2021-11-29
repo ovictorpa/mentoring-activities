@@ -97,5 +97,3 @@ class FinancialStrategy(unittest.TestCase):
 
         self.assertIn('hasActionsPermission', json_data)
         self.assertEqual(type(json_data['hasActionsPermission']), bool)
-
-        print()

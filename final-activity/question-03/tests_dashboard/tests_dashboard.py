@@ -186,5 +186,3 @@ class Dashboard(unittest.TestCase):
 
         self.assertIn('finalProfit', dre2)
         self.assertEqual(type(dre2['finalProfit']), float)
-
-        print()
