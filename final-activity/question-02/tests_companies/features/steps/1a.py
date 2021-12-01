@@ -25,7 +25,6 @@ def given(context):
         (By.XPATH,
          '/html/body/app-root/app-sidebar-layout/div/div/app-accessibility-bar/div/nav/div/ul/ul/li[2]/button')))
 
-
 @when("the user clicks in Monitor button")
 def when(context):
     monitor_button = context.driver.find_element_by_xpath(

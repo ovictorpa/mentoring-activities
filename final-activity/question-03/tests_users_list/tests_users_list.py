@@ -89,6 +89,3 @@ class UsersList(unittest.TestCase):
 
         self.assertIn('total', json_data)
         self.assertEqual(type(json_data['total']), int)
-
-
-        print()
